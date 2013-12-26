@@ -1,13 +1,13 @@
 basket-css-example
 ==
 
-# About
+## About
 This is an example of how you might be able to use basket.js to support CSS using [create-stylesheet](https://github.com/andrewwakeling/create-stylesheet).
 
-# @import not handled
+## @import not handled
 CSS has the ability to load other resources stylesheets via `@import` and these calls aren't currently handled by basket.js. (A solution would probably require parsing of the CSS.)
 
-# Issues with paths in CSS
+## Issues with paths in CSS
 Since the CSS is directly inserted into the DOM as a style element, relative paths are no longer relative to their source path. This is demonstrated by the difference seen in `basket.html` vs `normal.html`.
 
 This problem is not exclusive to `@import` but can occur with any other resource which includes a path (e.g. `url`).
