@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>basket.js with CSS</title>
+</head>
+<body>
+<script src="lib/create-stylesheet.unwrapped-0.2.1.js"></script>
+<script src="lib/basket.full.min-0.0.3.js"></script>
+<script>
+    basket.require({ url: 'css/styles.css', execute: false }).then(function(responses) {
+        // HACK: function parameters for the promise method don't appear to be documented, but they contain the responses for now.
+        var css = responses[0];
+        _stylesheet.appendStyleSheet(css, function(err, style) {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log("Stylesheet successfully load via basket.js");
+            }
+        });
+    });
+</script>
+<div id="absolute">green (absolute @import)</div>
+<div id="relative">blue (relative @import)</div>
+</body>
+</html>
